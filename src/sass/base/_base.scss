@@ -1,0 +1,36 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font-work-sans;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-style: normal;
+  color: $white;
+  font-weight: 400;
+}
+
+::selection {
+  background: $selection-color;
+  color: $selection-text-color;
+}
+
+:focus {
+  outline-color: $outline-color;
+}
+
+.wrapper {
+  max-width: 119rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}

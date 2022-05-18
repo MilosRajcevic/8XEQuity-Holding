@@ -1,0 +1,74 @@
+.btn {
+  text-transform: uppercase;
+  padding: 0.8rem 1.4rem;
+  color: $white;
+  border: 1px solid $white;
+  display: inline-block;
+  border-radius: 0.6rem;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $orange;
+    border: 1px solid $orange;
+  }
+}
+
+.nav__hamburger-menu {
+  display: none;
+  @include respond(tab) {
+    margin-left: auto;
+    z-index: 1000;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+
+    & span {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      display: inline-block;
+      height: 3px;
+      background-color: $orange;
+      transition: all 0.3s;
+      width: 80%;
+
+      &:first-child {
+        top: 1rem;
+      }
+
+      &:nth-child(2) {
+        top: 1.8rem;
+      }
+
+      &:last-child {
+        top: 2.6rem;
+      }
+    }
+
+    &.active {
+      & span {
+        background-color: $black;
+
+        &:first-child {
+          top: 2rem;
+          transform: translate(-50%) rotate(135deg);
+        }
+
+        &:nth-child(2) {
+          top: 2rem;
+          transform: translateX(100%);
+          opacity: 0;
+        }
+
+        &:last-child {
+          top: 2rem;
+          transform: translate(-50%) rotate(-135deg);
+        }
+      }
+    }
+  }
+}

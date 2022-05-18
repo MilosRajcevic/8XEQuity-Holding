@@ -1,0 +1,29 @@
+.investment {
+  height: 100vh;
+  padding: 17rem 0 47rem;
+  @include bg-center;
+  position: relative;
+
+  &::after {
+    top: 0;
+    position: absolute;
+    min-height: 100%;
+    width: 100vw;
+    content: "";
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  @include respond(tab) {
+    padding: 15rem 0 30rem;
+  }
+
+  @include respond(mob) {
+    padding: 15rem 0 25rem;
+  }
+}
+
+.investment__content {
+  position: relative;
+  z-index: 10;
+}

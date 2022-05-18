@@ -1,0 +1,31 @@
+.nav__sticky {
+  transition: all 0.3s;
+  z-index: 1000;
+  position: fixed;
+  background-color: rgba($white, 0.7);
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  & .nav__link {
+    color: $grey-sticky;
+    &:hover {
+      color: $grey-sticky-hover;
+    }
+    &--active {
+      &::after {
+        background: $orange-dark;
+      }
+    }
+  }
+
+  & .nav__btn {
+    color: $orange-dark;
+    border: 1px solid $orange-dark;
+
+    &:hover {
+      color: $grey-sticky-hover;
+      border: 1px solid $grey-sticky-hover;
+    }
+  }
+}

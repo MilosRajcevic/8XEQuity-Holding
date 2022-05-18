@@ -1,0 +1,49 @@
+.u-hide {
+  display: none;
+}
+
+.u-show {
+  display: block;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+}
+
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+}
+
+.overlay {
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+  background: $white;
+  transition: all 0.2s linear;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  &.active {
+    visibility: visible;
+    opacity: 0.9;
+    pointer-events: auto;
+  }
+}
+
+.orange-line {
+  &::after {
+    content: "";
+    display: block;
+    background: $orange;
+    height: 2px;
+    border-radius: 2px;
+    width: 13.5rem;
+  }
+}
+
+.orange-highlight {
+  color: $orange;
+}

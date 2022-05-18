@@ -1,0 +1,138 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.hero__background {
+  height: 100vh;
+
+  @include bg-center;
+}
+
+.hero__content {
+  max-width: 73rem;
+  padding-top: 41rem;
+  margin-bottom: 5rem;
+  padding-left: 3rem;
+  @include respond(mob) {
+    padding-left: 1rem;
+  }
+
+  @include respond(tab) {
+    padding-top: 30rem;
+    max-width: 60rem;
+    margin-bottom: 3rem;
+  }
+
+  @include respond(mob) {
+    padding-top: 15rem;
+  }
+}
+
+.hero__btn {
+  margin-left: 3rem;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  @include respond(mob) {
+    margin-left: 1rem;
+  }
+}
+
+.hero__btn-text {
+  display: inline-block;
+  margin-right: 1.2rem;
+}
+
+.hero__btn-icon {
+  font-size: 1.2rem;
+  display: inline-block;
+  color: $orange;
+}
+
+.hero__btn-scroll {
+  position: absolute;
+  z-index: 10;
+  height: 3.2rem;
+  width: 2.4rem;
+  border: 1px solid $white;
+  border-radius: 10rem;
+  bottom: 2rem;
+  left: 50%;
+  transform: translate(-50%);
+  transition: all 0.3s;
+
+  &::after {
+    position: absolute;
+    height: 0.8rem;
+    width: 0.4rem;
+    background-color: $white;
+    content: "";
+    left: 50%;
+    border-radius: 10rem;
+    transform: translateX(-50%);
+    top: 5px;
+    transition: all 0.3s;
+    animation: move 0.6s;
+    animation-iteration-count: infinite;
+  }
+
+  &:hover {
+    border: 1px solid $orange;
+
+    &::after {
+      background-color: $orange;
+    }
+  }
+
+  @include respond(tab) {
+    display: none;
+  }
+}
+
+.swiper-pagination {
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+  background-color: $bullet-grey;
+  cursor: pointer;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #4c4c4c;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $bullet-grey;
+  position: relative;
+  pointer-events: none;
+
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid $bullet-grey;
+    border-radius: 10rem;
+  }
+}

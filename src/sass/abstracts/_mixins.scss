@@ -1,0 +1,32 @@
+@mixin respond($breakpoint) {
+  // tablets and small screens < 1100px
+  @if $breakpoint == tab {
+    @media only screen and (max-width: 68.75em) {
+      @content;
+    }
+  }
+  // mobiles < 767px
+  @if $breakpoint == mob {
+    @media only screen and (max-width: 47.9375em) {
+      @content;
+    }
+  }
+}
+
+@mixin bg-center {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@mixin invisible {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@mixin visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
