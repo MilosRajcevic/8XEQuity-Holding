@@ -1,27 +1,27 @@
-import Navigation from "./navigaiton";
+import Navigation from "./navigation";
 import { activeClassName } from "../utils/config";
 
 class HrefScrollSmooth extends Navigation {
   allLinks = document.querySelectorAll(`[href^='#']`);
 
   init() {
-    this.hrefScrollHanderl();
+    this._hrefScrollHandler();
   }
 
-  hrefScrollHanderl() {
+  _hrefScrollHandler() {
     this.allLinks.forEach((link) =>
-      link.addEventListener("click", this._smothScroll)
+      link.addEventListener("click", this._smoothScroll)
     );
   }
 
-  _smothScroll = (e) => {
+  _smoothScroll = (e) => {
     e.preventDefault();
     const href = e.target.hash;
 
     document.querySelector(href).scrollIntoView({ behavior: "smooth" });
 
     if (this.navList.classList.contains(activeClassName)) {
-      this.openNavigation(e);
+      this.toggleNavigation(e);
     }
   };
 

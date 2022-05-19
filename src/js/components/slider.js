@@ -14,7 +14,7 @@ class Slider {
       loop: true,
 
       autoplay: {
-        delay: 3500,
+        delay: 5000,
         disableOnInteraction: false,
       },
 
