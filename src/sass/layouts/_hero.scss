@@ -31,22 +31,12 @@
 
 .hero__btn {
   margin-left: 3rem;
-  display: flex;
-  align-items: center;
-  width: fit-content;
   @include respond(mob) {
     margin-left: 1rem;
   }
 }
 
-.hero__btn-text {
-  display: inline-block;
-  margin-right: 1.2rem;
-}
-
 .hero__btn-icon {
-  font-size: 1.2rem;
-  display: inline-block;
   color: $orange;
 }
 

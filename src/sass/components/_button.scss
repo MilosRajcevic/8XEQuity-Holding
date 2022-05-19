@@ -1,10 +1,14 @@
 .btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: fit-content;
   text-align: center;
   text-transform: uppercase;
   padding: 0.8rem 1.4rem;
   color: $white;
   border: 1px solid $white;
-  display: inline-block;
+  background: none;
   border-radius: 0.6rem;
   transition: all 0.3s;
   font-weight: 500;
@@ -13,6 +17,15 @@
     color: $orange;
     border: 1px solid $orange;
   }
+}
+
+.btn-text {
+  display: inline-block;
+  margin-right: 1.2rem;
+}
+.btn-icon {
+  font-size: 1.4rem;
+  display: inline-block;
 }
 
 .nav__hamburger-menu {
