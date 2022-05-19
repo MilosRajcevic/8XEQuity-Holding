@@ -1,0 +1,160 @@
+.footer {
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12rem;
+
+  @include respond(mob) {
+    flex-direction: column-reverse;
+    padding-top: 9rem;
+  }
+}
+
+.footer__text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer__heading {
+  @include respond(mob) {
+    display: none;
+  }
+
+  &--mob {
+    display: none;
+
+    @include respond(mob) {
+      display: block;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+.footer__info-box {
+}
+
+.footer__icon {
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  font-weight: 300;
+  color: $orange-dark;
+  margin-bottom: 1.3rem;
+
+  @include respond(mob) {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.footer__address {
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-style: normal;
+
+  & a {
+    color: $black-light;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  @include respond(mob) {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+}
+
+.footer__form-box {
+  padding-top: 4rem;
+  width: 40rem;
+
+  @include respond(mob) {
+    padding-top: 0;
+    margin-bottom: 3rem;
+
+    width: 100%;
+  }
+}
+
+.footer__form {
+}
+
+.footer__form-list {
+  margin-bottom: 2rem;
+}
+
+.footer__form-item {
+  display: flex;
+  flex-direction: column;
+
+  &:not(:last-child) {
+    margin-bottom: 5.5rem;
+  }
+
+  @include respond(mob) {
+    &:not(:last-child) {
+      margin-bottom: 3.5rem;
+    }
+  }
+}
+
+.footer__form-label {
+  color: $blue-dark;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.footer__form-required {
+  color: $orange-dark;
+}
+
+.footer__form-textarea,
+.footer__form-input {
+  border: none;
+  border-bottom: 1px solid $orange-dark;
+  font-size: 1.6rem;
+  line-height: 3rem;
+  color: $blue-dark;
+
+  &:focus {
+    outline: none;
+  }
+
+  @include respond(mob) {
+    line-height: 2rem;
+    font-size: 1.4rem;
+  }
+}
+
+.footer__form-textarea {
+  height: 15rem;
+  font-family: $font-work-sans;
+
+  @include respond(mob) {
+    height: 10rem;
+  }
+}
+
+.footer__form-button {
+  color: $orange-dark;
+  border: 1px solid $orange-dark;
+  margin-left: auto;
+
+  @include respond(mob) {
+    font-size: 1.4rem;
+  }
+}
+
+.footer__form-button-text {
+}
+
+.footer__form-button-icon {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
