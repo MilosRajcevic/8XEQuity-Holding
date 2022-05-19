@@ -1,0 +1,119 @@
+.img-text {
+  @include bg-center;
+}
+.img-text__box {
+}
+
+.img-text__heading {
+  padding: 14rem 0 10.5rem;
+
+  @include respond(tab) {
+    padding: 10rem 0 5rem;
+  }
+}
+
+.img-text__content {
+  display: flex;
+  justify-content: flex-end;
+
+  @include respond(tab) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.img-text__img-box {
+  max-width: 42rem;
+  margin-right: 4.4rem;
+  position: relative;
+
+  @include respond(tab) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 5rem;
+  }
+
+  @include respond(mob) {
+    margin-bottom: 6rem;
+  }
+}
+
+.img-text__img {
+}
+
+.img-text__img-description {
+  background: $white;
+  box-shadow: 0 5px 15px 0 rgba($black, 0.07), 0 15px 4px 0 #32325d03;
+  padding: 1.4rem 0 2.1rem 1rem;
+  max-width: 55rem;
+  width: 100%;
+
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+  left: 60%;
+
+  @include respond(tab) {
+    max-width: 30rem;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  @include respond(mob) {
+    padding: 1.2rem 0 1.4rem 1rem;
+  }
+}
+
+.img-text__name {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  font-weight: 600;
+  color: $grey-dark;
+
+  @include respond(mob) {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+}
+
+.img-text__title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: $orange-dark-ocer;
+  @include respond(mob) {
+    font-size: 1rem;
+    line-height: 1.6rem;
+  }
+}
+
+.img-text__text-box {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    background-image: url("../../assets/desktop/Home/about/quote.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 16rem;
+    width: 16rem;
+    top: -50%;
+    left: -2rem;
+    transform: translateY(50%);
+
+    @include respond(tab) {
+      height: 10rem;
+      width: 10rem;
+      left: -5rem;
+    }
+
+    @include respond(mob) {
+      left: -0.5rem;
+      height: 8rem;
+      width: 8rem;
+    }
+  }
+}

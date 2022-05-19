@@ -1,6 +1,5 @@
 .img-links {
   display: flex;
-  height: 100vh;
 
   @include respond(mob) {
     flex-direction: column;

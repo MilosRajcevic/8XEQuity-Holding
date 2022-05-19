@@ -49,4 +49,35 @@
       }
     }
   }
+
+  &--modifier {
+    & p {
+      color: $blue-dark;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      max-width: 55rem;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      &:not(:last-child) {
+        padding-bottom: 2rem;
+      }
+
+      @include respond(mob) {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        padding-bottom: 1.4rem;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+
+        &:not(:last-child) {
+          padding-bottom: 1.4rem;
+        }
+      }
+    }
+  }
 }
