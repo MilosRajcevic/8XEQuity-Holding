@@ -1,11 +1,17 @@
 .nav__sticky {
   transition: all 0.3s;
-  z-index: 1000;
+  z-index: 1500;
   position: fixed;
   background-color: rgba($white, 0.7);
   left: 0;
   right: 0;
   width: 100%;
+  box-shadow: 0.5rem 0.2rem 1rem rgba(0, 0, 0, 0.3);
+
+  &.active {
+    box-shadow: none;
+    background-color: transparent;
+  }
 
   & .nav__link {
     color: $grey-sticky;

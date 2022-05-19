@@ -1,3 +1,5 @@
+import { activeClassName } from "../utils/config";
+
 class Observer {
   allSections = document.querySelectorAll("[data-section]");
 
@@ -12,8 +14,9 @@ class Observer {
 
     allNavItems.forEach((item) => {
       const itemNavAtt = item.getAttribute("data-nav");
-      item.classList.remove("active");
-      if (intersectionSectionAtt === itemNavAtt) item.classList.add("active");
+      item.classList.remove(activeClassName);
+      if (intersectionSectionAtt === itemNavAtt)
+        item.classList.add(activeClassName);
     });
   }
 

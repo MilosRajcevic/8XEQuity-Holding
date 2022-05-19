@@ -9,6 +9,10 @@
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+
+  @include respond(mob) {
+    font-size: 52.5%;
+  }
 }
 
 body {

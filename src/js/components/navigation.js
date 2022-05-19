@@ -9,21 +9,14 @@ class Navigation {
   lastScroll = 0;
 
   init() {
-    this.stickyNavHandler();
-    if (window.screen.width < 1100) this.hamburgerMenuHandler();
-  }
-
-  hamburgerMenuHandler() {
-    this.hamburgerMenu.addEventListener("click", this.openNavigation);
-  }
-
-  stickyNavHandler() {
     window.addEventListener("scroll", this._stickyNavigation);
+    if (window.screen.width < 1100)
+      this.hamburgerMenu.addEventListener("click", this.toggleNavigation);
   }
 
-  openNavigation = (e) => {
-    [this.hamburgerMenu, this.overlay, this.navList].forEach((item) =>
-      item.classList.toggle(activeClassName)
+  toggleNavigation = (e) => {
+    [this.hamburgerMenu, this.overlay, this.navList, this.stickyNav].forEach(
+      (item) => item.classList.toggle(activeClassName)
     );
     this.html.classList.toggle("no-scroll");
   };

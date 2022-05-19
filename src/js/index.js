@@ -1,4 +1,4 @@
-import Navigation from "./components/navigaiton";
+import Navigation from "./components/navigation";
 import HrefScrollSmooth from "./components/hrefScroll";
 import Slider from "./components/slider";
 import Observer from "./components/observer";

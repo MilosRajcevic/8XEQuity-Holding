@@ -6,15 +6,15 @@
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 500;
+  z-index: 1500;
 }
 .nav__content {
   display: flex;
   align-items: center;
-  padding: 3rem 1rem;
+  padding: 3rem 1rem 1.5rem;
 
   @include respond(tab) {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1.5rem;
   }
 }
 
@@ -30,7 +30,6 @@
     top: 14rem;
     left: 100%;
     transform: translateX(100%);
-    z-index: 1000;
     transition: all 0.3s ease-in-out;
     @include invisible;
 
@@ -88,7 +87,8 @@
     right: 50%;
     left: 50%;
     background: $orange;
-    transition: all 0.3s ease-in;
+    transition: all 0.3s ease-out;
+    transform: translateY(0.3rem);
   }
 
   &.active {
@@ -97,13 +97,11 @@
     &::after {
       left: 0;
       right: 0;
-
-      transform: translateY(0.5rem);
     }
   }
 
   @include respond(tab) {
-    color: $black;
+    color: $grey-sticky;
 
     font-size: 4rem;
     line-height: 4.8rem;
@@ -118,7 +116,7 @@
     }
 
     &:hover {
-      color: $black;
+      color: $grey-sticky;
     }
   }
 
@@ -132,17 +130,17 @@
   @include respond(tab) {
     font-size: 3.2rem;
     line-height: 3.6rem;
-    color: $black;
-    border: 2px solid $black;
+    color: $grey-sticky;
+    border: 2px solid $grey-sticky;
 
     &:hover {
-      color: $black;
-      border: 2px solid $black;
+      color: $grey-sticky;
+      border: 2px solid $grey-sticky;
     }
   }
 
   @include respond(mob) {
-    font-size: 2rem;
-    line-height: 2.4rem;
+    font-size: 1.6rem;
+    line-height: 2rem;
   }
 }
