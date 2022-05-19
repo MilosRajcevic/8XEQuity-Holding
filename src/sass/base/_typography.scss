@@ -14,6 +14,16 @@
 }
 
 .heading-3 {
+  font-size: 6rem;
+  line-height: 7rem;
+  color: $black-light;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  @include respond(mob) {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
 }
 
 .heading-4 {
