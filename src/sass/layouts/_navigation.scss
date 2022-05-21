@@ -7,7 +7,14 @@
   left: 0;
   right: 0;
   z-index: 1500;
+
+  &.active {
+    & * .nav__logo-link {
+      display: none;
+    }
+  }
 }
+
 .nav__content {
   display: flex;
   align-items: center;
@@ -16,6 +23,14 @@
   @include respond(tab) {
     padding: 2rem 1rem 1.5rem;
   }
+}
+
+.nav__logo-link {
+  display: block;
+}
+
+.nav__logo-link--sticky {
+  display: none;
 }
 
 .nav__nav {
