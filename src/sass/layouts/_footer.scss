@@ -4,11 +4,11 @@
 .footer__content {
   display: flex;
   justify-content: space-between;
-  padding-top: 12rem;
+  padding-top: 10rem;
 
   @include respond(mob) {
     flex-direction: column-reverse;
-    padding-top: 9rem;
+    padding-top: 8rem;
   }
 }
 
@@ -71,7 +71,7 @@
 }
 
 .footer__form-box {
-  padding-top: 4rem;
+  padding-top: 2rem;
   width: 40rem;
 
   @include respond(mob) {

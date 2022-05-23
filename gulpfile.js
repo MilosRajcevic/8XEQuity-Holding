@@ -137,7 +137,7 @@ function watch() {
     server: {
       baseDir: "./dist",
     },
-    browser: "chrome",
+    browser: "google-chrome",
   });
   gulp.watch(filesPath.sass, sassTask).on("change", browserSync.reload);
   gulp.watch(filesPath.js, jsTask).on("change", browserSync.reload);
