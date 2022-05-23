@@ -19,6 +19,11 @@
       rel="stylesheet"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://i.icomoon.io/public/temp/de04d26b5f/UntitledProject/style.css"
+    />
+
     <title>8X EQuity Holding</title>
 
     <link rel="stylesheet" href="./css/main.min.css" />
@@ -38,10 +43,8 @@
             <!-- Slide 1 -->
             <div class="hero__swiper-slide swiper-slide">
               <div
-                class="hero__background"
-                style="
-                  background-image: url(../assets/desktop/Home/bgHeader.png);
-                "
+                class="hero__background lazy"
+                data-bg="../assets/desktop/Home/bgHeader.png"
               >
                 <div class="wrapper">
                   <div class="hero__content orange-line rtx">
@@ -62,10 +65,8 @@
             <!-- Slide 2 -->
             <div class="hero__swiper-slide swiper-slide">
               <div
-                class="hero__background"
-                style="
-                  background-image: url(../assets/desktop/Home/bgHeader.png);
-                "
+                class="hero__background lazy"
+                data-bg="../assets/desktop/Home/bgHeader.png"
               >
                 <div class="wrapper">
                   <div class="hero__content orange-line rtx">
@@ -90,9 +91,9 @@
       </section>
 
       <section
-        class="investment section"
+        class="investment section lazy"
         id="investment"
-        style="background-image: url(../assets/desktop/Home/bgVision.png)"
+        data-bg="/assets/desktop/Home/bgVision.png"
         data-section="investment"
       >
         <div class="investment__bg-txt-top bg-txt-top">
@@ -165,10 +166,10 @@
       </section>
 
       <section
-        class="img-text section"
+        class="img-text section lazy"
         id="about"
         data-section="about"
-        style="background-image: url(../assets/desktop/Home/about/BG.png)"
+        data-bg="/assets/desktop/Home/about/BG.png"
       >
         <div class="img-text__box">
           <div class="wrapper">
@@ -176,9 +177,10 @@
             <div class="img-text__content">
               <div class="img-text__img-box">
                 <img
-                  src="../assets/desktop/Home/about/Maxime-img.png"
+                  src=""
+                  data-src="../assets/desktop/Home/about/Maxime-img.png"
                   alt="Maxime Berube"
-                  class="img-text__img"
+                  class="img-text__img lazy"
                 />
                 <div class="img-text__img-description">
                   <h5 class="img-text__name">Maxime Berube</h5>
@@ -186,6 +188,10 @@
                 </div>
               </div>
               <div class="img-text__text-box rtx rtx--modifier">
+                <div
+                  class="img-text__bg-quotes lazy"
+                  data-bg="../assets/desktop/Home/about/quote.png"
+                ></div>
                 <p>
                   We partner with entrepreneur with the objective to build
                   sustainable, profitable and fast growing companies with user

@@ -4,6 +4,7 @@
     line-height: 4.2rem;
     padding-bottom: 4rem;
     font-weight: 400;
+    letter-spacing: $letter-spacing-semi-medium;
   }
 
   & strong {
@@ -15,7 +16,7 @@
     text-transform: uppercase;
     font-size: 6.5rem;
     font-weight: 500;
-    letter-spacing: 0.182rem;
+    letter-spacing: $letter-spacing-large;
     line-height: 7.6rem;
     max-width: 44rem;
     margin-bottom: 3rem;
@@ -35,6 +36,7 @@
     line-height: 2.1rem;
     max-width: 52.5rem;
     padding-bottom: 1.2rem;
+    letter-spacing: $letter-spacing-semi-large;
 
     &:last-child {
       padding-bottom: 4.5rem;
@@ -56,6 +58,7 @@
       font-size: 1.4rem;
       line-height: 2rem;
       max-width: 55rem;
+      letter-spacing: normal;
 
       &:last-child {
         padding-bottom: 0;

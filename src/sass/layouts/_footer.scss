@@ -1,10 +1,17 @@
 .footer {
+  position: relative;
+  background-color: rgba(#f7f7f6, 1);
+  @include bg-center;
 }
 
 .footer__content {
   display: flex;
   justify-content: space-between;
-  padding-top: 10rem;
+  padding-top: 12rem;
+
+  @include respond(tab) {
+    padding-top: 10rem;
+  }
 
   @include respond(mob) {
     flex-direction: column-reverse;
@@ -19,6 +26,8 @@
 }
 
 .footer__heading {
+  letter-spacing: $letter-spacing-large;
+
   @include respond(mob) {
     display: none;
   }
@@ -37,11 +46,11 @@
 }
 
 .footer__icon {
-  font-size: 2.4rem;
-  line-height: 2.4rem;
+  font-size: 2.8rem;
+  line-height: 2.8rem;
   font-weight: 300;
   color: $orange-dark;
-  margin-bottom: 1.3rem;
+  margin-bottom: 1rem;
 
   @include respond(mob) {
     font-size: 2.2rem;
@@ -54,6 +63,7 @@
   font-size: 1.6rem;
   line-height: 2rem;
   font-style: normal;
+  padding-bottom: 1.2rem;
 
   & a {
     color: $black-light;
@@ -71,8 +81,12 @@
 }
 
 .footer__form-box {
-  padding-top: 2rem;
+  padding-top: 5rem;
   width: 40rem;
+
+  @include respond(tab) {
+    padding-top: 2rem;
+  }
 
   @include respond(mob) {
     padding-top: 0;
@@ -108,6 +122,7 @@
   color: $blue-dark;
   font-size: 1.6rem;
   line-height: 2rem;
+  letter-spacing: $letter-spacing-small;
 }
 
 .footer__form-required {
@@ -121,6 +136,7 @@
   font-size: 1.6rem;
   line-height: 3rem;
   color: $blue-dark;
+  background: transparent;
 
   &:focus {
     outline: none;
@@ -133,7 +149,7 @@
 }
 
 .footer__form-textarea {
-  height: 15rem;
+  height: 12rem;
   font-family: $font-work-sans;
 
   @include respond(mob) {

@@ -5,13 +5,16 @@
   width: fit-content;
   text-align: center;
   text-transform: uppercase;
-  padding: 0.8rem 1.4rem;
+  padding: 0.8rem 1.5rem;
   color: $white;
   border: 1px solid $white;
   background: none;
   border-radius: 0.6rem;
   transition: all 0.3s;
   font-weight: 500;
+  letter-spacing: $letter-spacing-medium;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
 
   &:hover {
     color: $orange;

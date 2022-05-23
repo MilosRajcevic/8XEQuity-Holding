@@ -10,7 +10,7 @@
     width: 100vw;
     content: "";
     display: flex;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   @include respond(tab) {

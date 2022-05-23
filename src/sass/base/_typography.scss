@@ -4,7 +4,7 @@
 .heading-2 {
   font-size: 6.5rem;
   font-weight: 500;
-  letter-spacing: 0.182rem;
+  letter-spacing: $letter-spacing-large;
   line-height: 7.6rem;
 
   @include respond(mob) {
@@ -42,4 +42,10 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.lazy {
+  img:not([src]):not([srcset]) {
+    visibility: hidden;
+  }
 }

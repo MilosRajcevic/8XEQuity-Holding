@@ -11,7 +11,7 @@
 
 .hero__content {
   max-width: 73rem;
-  padding-top: 41rem;
+  padding-top: 48rem;
   margin-bottom: 5rem;
   padding-left: 3rem;
   @include respond(mob) {
@@ -44,17 +44,17 @@
   position: absolute;
   z-index: 10;
   height: 3.2rem;
-  width: 2.4rem;
+  width: 2rem;
   border: 1px solid $white;
   border-radius: 10rem;
-  bottom: 2rem;
+  bottom: 2.9rem;
   left: 50%;
   transform: translate(-50%);
   transition: all 0.3s;
 
   &::after {
     position: absolute;
-    height: 0.8rem;
+    height: 0.4rem;
     width: 0.4rem;
     background-color: $white;
     content: "";
@@ -82,12 +82,16 @@
 
 .swiper-pagination {
   top: 50%;
-  right: 2rem;
+  right: 3.4rem;
   transform: translateY(-50%);
   position: absolute;
   display: flex;
   flex-direction: column;
   z-index: 10;
+
+  @include respond(tab) {
+    right: 2rem;
+  }
 }
 
 .swiper-pagination-bullet {

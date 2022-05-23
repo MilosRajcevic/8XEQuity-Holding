@@ -69,6 +69,7 @@
   line-height: 2.1rem;
   font-weight: 600;
   color: $grey-dark;
+  letter-spacing: $letter-spacing-medium;
 
   @include respond(mob) {
     font-size: 1.6rem;
@@ -81,6 +82,7 @@
   font-size: 1.2rem;
   line-height: 1.8rem;
   color: $orange-dark-ocer;
+  letter-spacing: $letter-spacing-small;
   @include respond(mob) {
     font-size: 1rem;
     line-height: 1.6rem;
@@ -89,31 +91,30 @@
 
 .img-text__text-box {
   position: relative;
+}
 
-  &::before {
-    position: absolute;
-    display: block;
-    content: "";
-    background-image: url("../../assets/desktop/Home/about/quote.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    height: 16rem;
-    width: 16rem;
-    top: -50%;
-    left: -2rem;
-    transform: translateY(50%);
+.img-text__bg-quotes {
+  position: absolute;
+  display: block;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 16rem;
+  width: 16rem;
+  top: -50%;
+  left: -2rem;
+  transform: translateY(50%);
 
-    @include respond(tab) {
-      height: 10rem;
-      width: 10rem;
-      left: -5rem;
-    }
+  @include respond(tab) {
+    height: 10rem;
+    width: 10rem;
+    left: -5rem;
+  }
 
-    @include respond(mob) {
-      left: -0.5rem;
-      height: 8rem;
-      width: 8rem;
-    }
+  @include respond(mob) {
+    left: -0.5rem;
+    height: 8rem;
+    width: 8rem;
   }
 }
