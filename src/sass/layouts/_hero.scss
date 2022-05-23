@@ -74,10 +74,6 @@
       background-color: $orange;
     }
   }
-
-  @include respond(tab) {
-    display: none;
-  }
 }
 
 .swiper-pagination {

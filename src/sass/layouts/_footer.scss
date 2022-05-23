@@ -10,12 +10,12 @@
   padding-top: 12rem;
 
   @include respond(tab) {
-    padding-top: 10rem;
+    padding-top: 8rem;
   }
 
   @include respond(mob) {
     flex-direction: column-reverse;
-    padding-top: 8rem;
+    padding-top: 7rem;
   }
 }
 
@@ -37,7 +37,7 @@
 
     @include respond(mob) {
       display: block;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
   }
 }
@@ -152,8 +152,12 @@
   height: 12rem;
   font-family: $font-work-sans;
 
+  @include respond(tab) {
+    height: 9rem;
+  }
+
   @include respond(mob) {
-    height: 10rem;
+    height: 5rem;
   }
 }
 

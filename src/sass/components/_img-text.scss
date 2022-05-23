@@ -8,7 +8,10 @@
   padding: 14rem 0 10.5rem;
 
   @include respond(tab) {
-    padding: 10rem 0 5rem;
+    padding: 8rem 0 5rem;
+  }
+  @include respond(mob) {
+    padding: 7.4rem 0 3.4rem;
   }
 }
 
@@ -83,6 +86,7 @@
   line-height: 1.8rem;
   color: $orange-dark-ocer;
   letter-spacing: $letter-spacing-small;
+
   @include respond(mob) {
     font-size: 1rem;
     line-height: 1.6rem;
