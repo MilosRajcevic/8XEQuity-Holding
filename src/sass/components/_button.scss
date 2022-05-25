@@ -20,15 +20,26 @@
     color: $orange;
     border: 1px solid $orange;
   }
-}
 
-.btn-text {
-  display: inline-block;
-  margin-right: 1.2rem;
-}
-.btn-icon {
-  font-size: 1.4rem;
-  display: inline-block;
+  &--back {
+    &::before {
+      content: "\e900";
+      font-family: "icomoon" !important;
+      margin-right: 1rem;
+      color: $orange;
+      font-size: 1.4rem;
+    }
+  }
+
+  &--forward {
+    &::after {
+      content: "\e90d";
+      font-family: "icomoon" !important;
+      margin-left: 1rem;
+      color: $orange;
+      font-size: 1.4rem;
+    }
+  }
 }
 
 .nav__hamburger-menu {
