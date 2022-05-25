@@ -3,34 +3,10 @@
   position: relative;
 }
 
-.error__contet {
+.error__content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: fit-content;
-}
-
-.error__heading {
-  font-size: 3.6rem;
-  line-height: 4.2rem;
-  letter-spacing: 0.2px;
-  color: $white;
-  font-weight: 400;
-  margin-bottom: 7rem;
-
-  @include respond(mob) {
-    margin-bottom: 4rem;
-  }
-}
-
-.error__btn-text {
-}
-
-.error__btn {
-}
-
-.error__btn-icon {
-  color: $orange;
-  margin-right: 1rem;
 }

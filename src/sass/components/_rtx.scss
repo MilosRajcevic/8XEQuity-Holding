@@ -1,4 +1,11 @@
 .rtx {
+  & strong {
+    color: $orange;
+    font-weight: 400;
+  }
+}
+
+.rtx--modifier {
   & h2 {
     font-size: 3.6rem;
     line-height: 4.2rem;
@@ -8,8 +15,7 @@
   }
 
   & strong {
-    color: $orange;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   & h1 {
@@ -51,36 +57,57 @@
       }
     }
   }
+}
 
-  &--modifier {
-    & p {
-      color: $blue-dark;
-      font-size: 1.4rem;
-      line-height: 2rem;
-      max-width: 55rem;
-      letter-spacing: normal;
+.rtx--img-text {
+  & p {
+    color: $blue-dark;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    max-width: 55rem;
+    letter-spacing: normal;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 2rem;
+    }
+
+    @include respond(mob) {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+      padding-bottom: 1.4rem;
 
       &:last-child {
         padding-bottom: 0;
       }
 
       &:not(:last-child) {
-        padding-bottom: 2rem;
-      }
-
-      @include respond(mob) {
-        font-size: 1.2rem;
-        line-height: 1.6rem;
         padding-bottom: 1.4rem;
-
-        &:last-child {
-          padding-bottom: 0;
-        }
-
-        &:not(:last-child) {
-          padding-bottom: 1.4rem;
-        }
       }
     }
+  }
+}
+
+.rtx--error {
+  & h1 {
+    font-size: 3.6rem;
+    line-height: 4.2rem;
+    letter-spacing: 0.2px;
+    color: $white;
+    font-weight: 400;
+    margin-bottom: 7rem;
+    max-width: 100%;
+
+    @include respond(mob) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  & strong {
+    color: $orange;
+    font-weight: 400;
   }
 }
