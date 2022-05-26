@@ -78,7 +78,6 @@
     @include respond(mob) {
       font-size: 1.2rem;
       line-height: 1.6rem;
-      padding-bottom: 1.4rem;
 
       &:last-child {
         padding-bottom: 0;

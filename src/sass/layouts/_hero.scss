@@ -91,6 +91,10 @@
   @include respond(tab) {
     right: 2rem;
   }
+
+  @include respond(mob) {
+    display: none;
+  }
 }
 
 .hero__dot {
