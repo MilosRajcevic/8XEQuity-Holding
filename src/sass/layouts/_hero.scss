@@ -59,8 +59,6 @@
     transform: translateX(-50%);
     top: 5px;
     transition: all 0.3s;
-    animation: move 0.9s;
-    animation-iteration-count: infinite;
   }
 
   &:hover {
@@ -70,9 +68,18 @@
       background-color: $orange;
     }
   }
+
+  @include respond(mob) {
+    &:hover {
+      border: 1px solid $white;
+      &::after {
+        background-color: $white;
+      }
+    }
+  }
 }
 
-.swiper-pagination {
+.hero__dots {
   top: 50%;
   right: 3.4rem;
   transform: translateY(-50%);
@@ -86,7 +93,7 @@
   }
 }
 
-.swiper-pagination-bullet {
+.hero__dot {
   width: 1rem;
   height: 1rem;
   background-color: $bullet-grey;
@@ -104,20 +111,20 @@
   &:not(:last-child) {
     margin-bottom: 1rem;
   }
-}
 
-.swiper-pagination-bullet-active {
-  background-color: $bullet-grey;
-  position: relative;
-  pointer-events: none;
+  &.active {
+    background-color: $bullet-grey;
+    position: relative;
+    pointer-events: none;
 
-  &::after {
-    position: absolute;
-    content: "";
-    display: block;
-    width: 1.8rem;
-    height: 1.8rem;
-    border: 2px solid $bullet-grey;
-    border-radius: 10rem;
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 1.8rem;
+      height: 1.8rem;
+      border: 2px solid $bullet-grey;
+      border-radius: 10rem;
+    }
   }
 }
