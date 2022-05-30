@@ -1,6 +1,14 @@
 .hero {
   position: relative;
   overflow-x: hidden;
+
+  &__wrapper{
+    display:flex;
+    height:100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom:15rem;
+  }
 }
 
 .hero__background {
@@ -11,7 +19,6 @@
 
 .hero__content {
   max-width: 73rem;
-  padding-top: 48rem;
   margin-bottom: 5rem;
   padding-left: 3rem;
   @include respond(mob) {

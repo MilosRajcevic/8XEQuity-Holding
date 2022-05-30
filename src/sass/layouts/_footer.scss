@@ -116,6 +116,19 @@
 }
 
 .footer__form {
+  &-success{
+    h2{
+      font-size: 2rem;
+      line-height:2.2rem;
+      color: $orange;
+    }
+
+    p {
+      color: #3d4d65;
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
+  }
 }
 
 .footer__form-list {
