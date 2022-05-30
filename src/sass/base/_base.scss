@@ -13,6 +13,10 @@ html {
   @include respond(mob) {
     font-size: 52.5%;
   }
+
+  @include respond(largescreen){
+    font-size: 100%;
+  }
 }
 
 body {

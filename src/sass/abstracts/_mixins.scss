@@ -1,10 +1,18 @@
 @mixin respond($breakpoint) {
+  // 4k and small screens > 2560px
+  @if $breakpoint == largescreen {
+    @media only screen and (min-width: 160em) {
+      @content;
+    }
+  }
+  
   // tablets and small screens < 1100px
   @if $breakpoint == tab {
     @media only screen and (max-width: 68.75em) {
       @content;
     }
   }
+  
   // mobiles < 767px
   @if $breakpoint == mob {
     @media only screen and (max-width: 47.9375em) {
