@@ -12,7 +12,13 @@ class ContactForm {
           body: new FormData(e.target)
         })
         .then(response => response.text()
-          .then(html => this.form.parentNode.replaceChild(new DOMParser().parseFromString(html, 'text/html').body.firstChild, this.form)));
+          .then(html => {
+            this.form.parentNode.replaceChild(new DOMParser().parseFromString(html, 'text/html').body.firstChild, this.form);
+            const recaptchaField = document.querySelector('.g-recaptcha');
+            if(recaptchaField){
+              grecaptcha.render(document.querySelector('.g-recaptcha'));
+            }
+          }));
       });
     }
 }

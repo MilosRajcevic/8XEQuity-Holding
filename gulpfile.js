@@ -78,7 +78,7 @@ function jsTask(done) {
     )
     .pipe(
       webpack({
-        mode: "development",
+        mode: "production",
         module: {
           rules: [
             {

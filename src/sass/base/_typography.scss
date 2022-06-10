@@ -38,6 +38,10 @@ li {
   list-style: none;
 }
 
+.field-validation-error{
+  color: $orange-dark;
+}
+
 img {
   display: block;
   max-width: 100%;

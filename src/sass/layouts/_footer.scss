@@ -14,7 +14,8 @@
 .footer__content {
   display: flex;
   justify-content: space-between;
-
+  padding-bottom: 5rem;
+  
   @include respond(tab) {
   }
 
