@@ -9,8 +9,8 @@
   z-index: 1500;
 
   &.active {
-    & * .nav__logo-link {
-      display: none;
+    & > .nav__content {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
   }
 }
@@ -40,18 +40,14 @@
 
   @include respond(tab) {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     position: absolute;
-    top: 14rem;
-    left: 100%;
-    transform: translateX(100%);
+    top: 10rem;
     transition: all 0.3s ease-in-out;
     @include invisible;
 
     &.active {
       @include visible;
-      left: 50%;
-      transform: translateX(-50%);
     }
   }
 }
@@ -59,25 +55,48 @@
 .nav__list {
   display: flex;
   align-items: center;
-  margin-right: 6rem;
 
   @include respond(tab) {
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 4rem;
-    margin-right: 0rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
   }
 }
 
 .nav__item {
+  position: relative;
   &:not(:last-child) {
     margin-right: 5.8rem;
   }
 
   @include respond(tab) {
+    @include invisible;
+
+    transition: all 0.3s;
+    transform: translateY(2rem);
+
     &:not(:last-child) {
       margin-right: 0;
       margin-bottom: 2rem;
+      &::after {
+        position: absolute;
+        content: '';
+        height: 1px;
+        display: block;
+        width: 100vw;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        margin-left: -1rem;
+        bottom: -2rem;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+
+    &.active {
+      @include visible;
+      transform: translateY(0);
     }
   }
 }
@@ -95,7 +114,7 @@
   }
 
   &::after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     height: 2px;
@@ -118,8 +137,8 @@
   @include respond(tab) {
     color: $grey-sticky;
 
-    font-size: 4rem;
-    line-height: 4.8rem;
+    font-size: 2.6rem;
+    line-height: 3.2rem;
 
     &.active {
       pointer-events: auto;
@@ -143,8 +162,8 @@
 
 .nav__btn {
   @include respond(tab) {
-    font-size: 3.2rem;
-    line-height: 3.6rem;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
     color: $grey-sticky;
     border: 2px solid $grey-sticky;
 

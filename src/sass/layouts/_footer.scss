@@ -3,7 +3,7 @@
   background-color: rgba(#f7f7f6, 1);
   @include bg-center;
 
-  &__wrapper{
+  &__wrapper {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,8 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 5rem;
-  
+  padding-top: 6%;
+
   @include respond(tab) {
   }
 
@@ -33,7 +34,7 @@
 .footer__heading {
   letter-spacing: $letter-spacing-large;
   padding-bottom: 4rem;
-  
+
   @include respond(mob) {
     display: none;
   }
@@ -118,10 +119,10 @@
 }
 
 .footer__form {
-  &-success{
-    h2{
+  &-success {
+    h2 {
       font-size: 2rem;
-      line-height:2.2rem;
+      line-height: 2.2rem;
       color: $orange;
     }
 

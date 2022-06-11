@@ -19,6 +19,14 @@
   &.active {
     box-shadow: none;
     background-color: transparent;
+
+    & .nav__logo-link {
+      display: block;
+    }
+
+    & .nav__logo-link--sticky {
+      display: none;
+    }
   }
 
   & .nav__link {

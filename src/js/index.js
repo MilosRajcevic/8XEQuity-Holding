@@ -1,7 +1,7 @@
-import Navigation from "./components/navigation";
-import HrefScrollSmooth from "./components/hrefScroll";
-import Observer from "./components/observer";
-import LazyLoadImages from "./components/lazyLoadImages";
+import Navigation from './components/navigation';
+import HrefScrollSmooth from './components/hrefScroll';
+import Observer from './components/observer';
+import LazyLoadImages from './components/lazyLoadImages';
 import ContactForm from './components/contact-form';
 
 function init() {
