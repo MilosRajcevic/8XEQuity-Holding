@@ -1,47 +1,47 @@
 //General
 
-const gulp = require("gulp");
-const { series, parallel, dest } = require("gulp");
-const browserSync = require("browser-sync").create();
-const rename = require("gulp-rename");
-const plumber = require("gulp-plumber");
-const notify = require("gulp-notify");
-const del = require("del");
-const zip = require("gulp-zip");
+const gulp = require('gulp');
+const { series, parallel, dest } = require('gulp');
+const browserSync = require('browser-sync').create();
+const rename = require('gulp-rename');
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const del = require('del');
+const zip = require('gulp-zip');
 
 // SASS
-const sass = require("gulp-sass")(require("sass"));
-const sourcemaps = require("gulp-sourcemaps");
-const cssnano = require("gulp-cssnano");
-const autoprefixer = require("gulp-autoprefixer");
+const sass = require('gulp-sass')(require('sass'));
+const sourcemaps = require('gulp-sourcemaps');
+const cssnano = require('gulp-cssnano');
+const autoprefixer = require('gulp-autoprefixer');
 
 // JavaScript
-const babel = require("gulp-babel");
-const webpack = require("webpack-stream");
+const babel = require('gulp-babel');
+const webpack = require('webpack-stream');
 
 // HTML
-const kit = require("gulp-kit");
-const htmlmin = require("gulp-htmlmin");
+const kit = require('gulp-kit');
+const htmlmin = require('gulp-htmlmin');
 
 // Image optimization + clear cache
-const imagemin = require("gulp-imagemin");
-const cache = require("gulp-cache");
+const imagemin = require('gulp-imagemin');
+const cache = require('gulp-cache');
 
 // Files
 filesPath = {
-  sass: "./src/sass/**/*.scss",
-  js: "./src/js/**/*.js",
-  images: "./src/assets/**/*.+(png|jpg|gif|svg|webmanifest)", // kopirati
-  html: "./src/html/**/*.kit",
-  fonts: "./src/assets/fonts/*",
+  sass: './src/sass/**/*.scss',
+  js: './src/js/**/*.js',
+  images: './src/assets/**/*.+(png|jpg|gif|svg|webmanifest)', // kopirati
+  html: './src/html/**/*.kit',
+  fonts: './src/assets/fonts/*',
 };
 
 // Error message
 
 const plumberErrorHandler = {
   errorHandler: notify.onError({
-    title: "Miloše",
-    message: "Pogrešio si: <%= error.message %>",
+    title: 'Miloše',
+    message: 'Pogrešio si: <%= error.message %>',
   }),
 };
 
@@ -52,16 +52,16 @@ function sassTask(done) {
     .src([filesPath.sass])
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(autoprefixer())
     .pipe(sass())
+    .pipe(autoprefixer())
     .pipe(cssnano())
     .pipe(
       rename(function (path) {
-        path.basename += ".min";
+        path.basename += '.min';
       })
     )
-    .pipe(sourcemaps.write(""))
-    .pipe(dest("./dist/css"));
+    .pipe(sourcemaps.write(''))
+    .pipe(dest('./dist/css'));
   done();
 }
 
@@ -69,36 +69,36 @@ function sassTask(done) {
 
 function jsTask(done) {
   return gulp
-    .src("./src/js/index.js")
+    .src('./src/js/index.js')
     .pipe(sourcemaps.init())
     .pipe(
       babel({
-        presets: [["@babel/env", { modules: false }]],
+        presets: [['@babel/env', { modules: false }]],
       })
     )
     .pipe(
       webpack({
-        mode: "production",
+        mode: 'production',
         module: {
           rules: [
             {
               test: /\.css$/i,
-              use: ["style-loader", "css-loader"],
+              use: ['style-loader', 'css-loader'],
             },
           ],
         },
         output: {
-          filename: "index.js",
+          filename: 'index.js',
         },
       })
     )
     .pipe(
       rename(function (path) {
-        path.basename += ".min";
+        path.basename += '.min';
       })
     )
-    .pipe(sourcemaps.write("."))
-    .pipe(dest("./dist/js"));
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest('./dist/js'));
   done();
 }
 // HTML minify
@@ -109,7 +109,7 @@ function kitTask(done) {
     .pipe(plumber())
     .pipe(kit())
     .pipe(htmlmin()) //{ collapseWhitespace: true }
-    .pipe(dest("./dist"));
+    .pipe(dest('./dist'));
   done();
 }
 
@@ -119,14 +119,14 @@ function imagesTask(done) {
   gulp
     .src(filesPath.images)
     .pipe(cache(imagemin()))
-    .pipe(dest("./dist/assets/"));
+    .pipe(dest('./dist/assets/'));
   done();
 }
 
 // Copy fonts
 
 function fontTask(done) {
-  gulp.src(filesPath.fonts).pipe(dest("./dist/assets/fonts"));
+  gulp.src(filesPath.fonts).pipe(dest('./dist/assets/fonts'));
   done();
 }
 
@@ -135,14 +135,14 @@ function fontTask(done) {
 function watch() {
   browserSync.init({
     server: {
-      baseDir: "./dist",
+      baseDir: './dist',
     },
-    browser: "chrome",
+    browser: 'chrome',
   });
-  gulp.watch(filesPath.sass, sassTask).on("change", browserSync.reload);
-  gulp.watch(filesPath.js, jsTask).on("change", browserSync.reload);
-  gulp.watch(filesPath.html, kitTask).on("change", browserSync.reload);
-  gulp.watch(filesPath.images, imagesTask).on("change", browserSync.reload);
+  gulp.watch(filesPath.sass, sassTask).on('change', browserSync.reload);
+  gulp.watch(filesPath.js, jsTask).on('change', browserSync.reload);
+  gulp.watch(filesPath.html, kitTask).on('change', browserSync.reload);
+  gulp.watch(filesPath.images, imagesTask).on('change', browserSync.reload);
 }
 
 // Clearing cache
@@ -155,16 +155,16 @@ function clearCache(done) {
 
 function zipTask(done) {
   gulp
-    .src(["./**/*", "!./node_modules/**/*"])
-    .pipe(zip("archive.zip"))
-    .pipe(dest("./"));
+    .src(['./**/*', '!./node_modules/**/*'])
+    .pipe(zip('archive.zip'))
+    .pipe(dest('./'));
   done();
 }
 
 // Clean 'dist'
 
 function clean(done) {
-  return del(["./dist/**/*"]);
+  return del(['./dist/**/*']);
   done();
 }
 
