@@ -16,7 +16,6 @@ const cssnano = require('gulp-cssnano');
 const autoprefixer = require('gulp-autoprefixer');
 
 // JavaScript
-const babel = require('gulp-babel');
 const webpack = require('webpack-stream');
 
 // HTML
@@ -72,11 +71,6 @@ function jsTask(done) {
     .src('./src/js/index.js')
     .pipe(sourcemaps.init())
     .pipe(
-      babel({
-        presets: [['@babel/env', { modules: false }]],
-      })
-    )
-    .pipe(
       webpack({
         mode: 'production',
         module: {
@@ -84,6 +78,10 @@ function jsTask(done) {
             {
               test: /\.css$/i,
               use: ['style-loader', 'css-loader'],
+            },
+            {
+              test: /\.js$/,
+              loader: 'babel-loader',
             },
           ],
         },
